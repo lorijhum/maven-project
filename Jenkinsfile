@@ -17,7 +17,7 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                call "C:\Users\lhema\apache-maven-3.2.2\bin\mvn.bat"
+                call "C:\Users\lhema\apache-maven-3.2.2\bin\mvn.bat %pv% %p%" 
             }
             post {
                 success {
