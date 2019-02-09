@@ -17,7 +17,7 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                bat 'C:\Users\lhema\apache-maven-3.2.2\bin\mvn clean package'
+                bat 'mvn clean package'
             }
             post {
                 success {
