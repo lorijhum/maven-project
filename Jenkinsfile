@@ -35,7 +35,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "echo y | pscp -i ${params.tomcat_stage} C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        bat "echo y | pscp -i ${params.tomcat_stage} C:\\Program Files (x86)\\Jenkins\\workspace\\FullyAutomated\\webapp\\target\\*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                 }
 
                 stage ("Deploy to Production"){
