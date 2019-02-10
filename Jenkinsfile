@@ -40,7 +40,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "echo y | pscp -i C:\\Users\\lhema\\devOps\\tomcat-demo.ppk ${params.war_path} ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+                        bat "echo y | pscp -i C:\\Users\\lhema\\devOps\\tomcat-demo.ppk C:\\Program Files (x86)\\Jenkins\\workspace\\FullyAutomated\\webapp\\target\\*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
