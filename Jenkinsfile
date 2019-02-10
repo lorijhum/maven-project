@@ -11,6 +11,7 @@ pipeline {
          string(name:'tomcat-stage',defaultValue:'C:\\Users\\lhema\\devOps\\tomcat-demo.ppk')
          string(name:'tomcat-stage1',defaultValue:'C:/Program Files (x86)/Jenkins/webapp.war')
          string(name:'war-file',defaultValue:'C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war')
+         string(name: 'war_path', defaultValue:"C:/Program Files (x86)/Jenkins/workspace/Fully-Automated/webapp/target/*.war", description: 'full path to war file')
     }
 
     triggers {
@@ -40,7 +41,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "echo y | pscp -i C:\\Users\\lhema\\devOps\\tomcat-demo.ppk C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+                        bat "echo y | pscp -i C:\\Users\\lhema\\devOps\\tomcat-demo.ppk ${params.war_path} ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
