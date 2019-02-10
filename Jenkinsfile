@@ -31,7 +31,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "scp -i /home/jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        bat "echo y|pscp -i \"C:\Users\lhema\devOps\tomcat-demo.pem\" \"C:\Program Files (x86)\Jenkins\webapp.war\" ec2-18-191-126-23.us-east-2.compute.amazonaws.com:/var/lib/tomcat8/webapps/webapp.war"
                     }
                 }
 
