@@ -10,7 +10,7 @@ pipeline {
          string(name: 'tomcat_prod', defaultValue: '18.222.200.82', description: 'Production Server')
          string(name:'tomcat-stage',defaultValue:'C:/Users/lhema/devOps/tomcat-demo.ppk')
          string(name:'tomcat-stage1',defaultValue:'C:/Program Files (x86)/Jenkins/webapp.war')
-         string(name:'war-file',defaultValue:'C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target')
+         string(name:'war-file',defaultValue:'C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war')
     }
 
     triggers {
