@@ -11,8 +11,7 @@ pipeline {
          string(name:'tomcat-stage',defaultValue:'C:\\Users\\lhema\\devOps\\tomcat-demo.ppk')
          string(name:'tomcat-stage1',defaultValue:'C:/Program Files (x86)/Jenkins/webapp.war')
          string(name:'war-file',defaultValue:'C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war')
-         string(name: 'war_path', defaultValue:"C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/*.war", description: 'full path to war file')
-    }
+            }
 
     triggers {
          pollSCM('* * * * *')
