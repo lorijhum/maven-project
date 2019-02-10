@@ -11,7 +11,7 @@ pipeline {
          string(name:'tomcat_stage',defaultValue:'C:\\Users\\lhema\\devOps\\tomcat-demo.ppk')
          string(name:'tomcat_stage1',defaultValue:"C:/Program Files (x86)/Jenkins/webapp.war")
          string(name:'war_file',defaultValue:'C:\\Program Files (x86)\\Jenkins\\workspace\\FullyAutomated\\webapp\\target\\*.war')
-         string(name:'war_file2',defaultValue:"C:\\Program Files (x86)\\Jenkins\\jobs\\FullyAutomated\\builds\\%BUILD_NUMBER%\\archive/webapp\\target\\*.war")
+         string(name:'war_file2',defaultValue:'C:\\Program Files (x86)\\Jenkins\\jobs\\FullyAutomated\\builds\\%BUILD_NUMBER%\\archive/webapp\\target\\*.war')
             }
 
     triggers {
