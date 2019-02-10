@@ -34,12 +34,12 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "echo y|pscp -i ${params.tomcat_stage}  ${params.tomcat_stage1} ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        bat "echo y|pscp -i ${params.tomcat_stage}  ${params.war_file} ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
 }
                 }
                 stage ("Deploy to Production"){
                     steps {
-                       bat "echo y|pscp -i ${params.tomcat_stage}  ${params.tomcat_stage1} ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+                       bat "echo y|pscp -i ${params.tomcat_stage}  ${params.war_file} ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
