@@ -11,7 +11,7 @@ pipeline {
          string(name:'tomcat-stage',defaultValue:'C:\\Users\\lhema\\devOps\\tomcat-demo.ppk')
          string(name:'tomcat-stage1',defaultValue:'C:/Program Files (x86)/Jenkins/webapp.war')
          string(name:'war-file',defaultValue:'C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war')
-         string(name: 'war_path', defaultValue:"C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/*.war", description: 'full path to war file')
+         string(name: 'war_path', defaultValue:"C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war", description: 'full path to war file')
     }
 
     triggers {
@@ -35,8 +35,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "echo y | pscp -i ${params.tomcat_stage} C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war ec2-18.191.246.30.us-east-2.compute.amazonaws.com:/var/lib/tomcat8/webapps/webapp.war"
-                    }
+                        bat "echo y | pscp -i ${params.tomcat_stage} C:\\Program Files (x86)\\Jenkins\\workspace\\Fully-Automated\\webapp\\target\\*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                 }
 
                 stage ("Deploy to Production"){
