@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '18.191.126.23', description: 'Staging Server')
+         string(name: 'tomcat_dev', defaultValue: '18.191.246.30', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: '18.222.200.82', description: 'Production Server')
          string(name:'tomcat-stage',defaultValue:'C:/Users/lhema/devOps/tomcat-demo.pem')
          string(name:'tomcat-stage1',defaultValue:'C:/Program Files (x86)/Jenkins/webapp.war')
@@ -33,7 +33,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "echo y|pscp -i ${params.tomcat_stage} ${params.tomcat_stage1} ec2-18-191-126-23.us-east-2.compute.amazonaws.com:/var/lib/tomcat8/webapps/webapp.war"
+                        bat "echo y|pscp -i ${params.tomcat_stage} ${params.tomcat_stage1} ec2-18.191.246.30.us-east-2.compute.amazonaws.com:/var/lib/tomcat8/webapps/webapp.war"
                     }
                 }
 
