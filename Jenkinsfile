@@ -34,7 +34,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                         bat "echo y|pscp -i ${params.tomcat_stage} ${params.war_file} ec2-18.191.246.30.us-east-2.compute.amazonaws.com:/var/lib/tomcat8/webapps/webapp.war"
+                         bat "echo y|pscp -i ${params.tomcat_stage} ${params.war_file} ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps/webapp.war"
 }
                 }
                 stage ("Deploy to Production"){
