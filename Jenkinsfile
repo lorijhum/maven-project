@@ -26,7 +26,7 @@ stages{
             post {
                 success {
                     echo 'Now Archiving...'
-                    archiveArtifacts artifacts: 'C:\\Users\\lhema\\devOps\\*.war'
+                    archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
         }
