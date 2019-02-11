@@ -12,7 +12,7 @@ pipeline {
          string(name:'tomcat_stage1',defaultValue:"C:/Program Files (x86)/Jenkins/webapp.war")
          string(name:'war_file',defaultValue:'C:\\"Program Files (x86)"\\Jenkins\\workspace\\FullyAutomated\\webapp\\target\\*.war')
          string(name:'war_file2',defaultValue:'C:\\Users\\lhema\\devOps\\*.war')
-          }
+}
 
     triggers {
          pollSCM('* * * * *')
